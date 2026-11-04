@@ -12,38 +12,25 @@
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gugi&family=IBM+Plex+Sans+KR:wght@400;700&display=swap">
 <!-- GTM: site.config.json 의 gtmId 에 GTM-XXXX 를 넣으면 자동으로 들어갑니다 -->
-<style>/* Layout: 한 줄 목록형 게시판 — 입장권 모양 카드가 세로로 쌓이고, 상세는 한 장짜리 방문 기록지 */
+<style>/* Layout: 흰 바탕 + 2호선 초록 — 상단에 2호선 노선 띠, 사진이 큰 카드형 게시판. 밝은 톤 한 가지로 고정 */
 :root {
-  --bg: #f6f7f5;
+  --bg: #ffffff;
   --surface: #ffffff;
-  --ink: #18201c;
-  --muted: #5d6862;
-  --line: #dde3df;
-  --accent: #1f3a5f;
-  --line2: #00a84d;            /* 지하철 2호선 */
-  --free: #1b8a4a;  --free-bg: #e4f4ea;
-  --onsite: #9a6a00; --onsite-bg: #fbf0d4;
-  --pre: #c2352b;   --pre-bg: #fbe4e1;
-  --ended-bg: #eceeed;
+  --soft: #f1f9f4;             /* 연한 초록 바탕 */
+  --ink: #14231a;
+  --muted: #5b6b61;
+  --line: #e1ebe4;
+  --accent: #00a84d;           /* 지하철 2호선 */
+  --accent-deep: #00843d;
+  --line2: #00a84d;
+  --free: #0f8a45;  --free-bg: #e3f5ea;
+  --onsite: #9a6a00; --onsite-bg: #fdf3d6;
+  --pre: #d0362c;   --pre-bg: #fde6e3;
+  --ended-bg: #f3f5f4;
   --font-display: "Gugi", "IBM Plex Sans KR", system-ui, sans-serif;
   --font-body: "IBM Plex Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
-  --radius: 12px;
-}
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: #111613; --surface: #1a211d; --ink: #e8ede9; --muted: #a2aea7; --line: #2c3530;
-    --accent: #9cc0ec; --line2: #2fd27a;
-    --free: #5fd28c; --free-bg: #173524; --onsite: #f0c25a; --onsite-bg: #3a2f12;
-    --pre: #ff8a7f; --pre-bg: #3d1c19; --ended-bg: #222a26;
-    color-scheme: dark;
-  }
-}
-:root[data-theme="dark"] {
-  --bg: #111613; --surface: #1a211d; --ink: #e8ede9; --muted: #a2aea7; --line: #2c3530;
-  --accent: #9cc0ec; --line2: #2fd27a;
-  --free: #5fd28c; --free-bg: #173524; --onsite: #f0c25a; --onsite-bg: #3a2f12;
-  --pre: #ff8a7f; --pre-bg: #3d1c19; --ended-bg: #222a26;
-  color-scheme: dark;
+  --radius: 14px;
+  color-scheme: light;
 }
 
 * { box-sizing: border-box; }
@@ -60,25 +47,47 @@ a { color: inherit; }
 }
 
 /* 상단 */
-.site-top { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding-block: 4px 18px; }
-.site-name { font-weight: 700; text-decoration: none; font-size: 15px; display: inline-flex; align-items: center; gap: 8px; }
+.site-top { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding-block: 6px 16px; margin-bottom: 22px; border-bottom: 4px solid var(--accent); }
+.site-name { font-family: var(--font-display); font-size: 34px; line-height: 1; color: var(--accent); text-decoration: none; display: inline-flex; align-items: center; gap: 10px; letter-spacing: .01em; }
+.site-name .line2-dot { width: 34px; height: 34px; font-size: 18px; font-family: var(--font-body); }
 .line2-dot { width: 22px; height: 22px; border-radius: 50%; background: var(--line2); color: #fff; font-size: 12px; font-weight: 700; display: inline-grid; place-items: center; }
 .updated { color: var(--muted); font-size: 13px; }
 
-.sample-note { background: var(--onsite-bg); color: var(--onsite); border-radius: 8px; padding: 8px 12px; font-size: 13px; margin-bottom: 18px; }
+.sample-note { background: var(--soft); color: var(--accent-deep); border-radius: 8px; padding: 8px 12px; font-size: 13px; margin-bottom: 18px; }
 
 h1.board-title { font-family: var(--font-display); font-weight: 400; font-size: clamp(28px, 7vw, 40px); line-height: 1.2; margin: 0 0 6px; text-wrap: balance; }
 .board-sub { color: var(--muted); margin: 0 0 20px; }
 
 /* 필터 */
-.filters { display: grid; gap: 10px; margin-bottom: 18px; }
-.filter-row { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
-.filter-label { font-size: 12px; color: var(--muted); letter-spacing: .04em; width: 34px; flex: none; }
+.filters { margin-bottom: 18px; }
+.filter-panels { display: grid; grid-template-columns: 1fr 1fr; border: 1px solid var(--line); border-radius: var(--radius); }
+.filter-row { display: flex; gap: 6px; flex-wrap: wrap; justify-content: center; align-content: flex-start; padding: 12px; min-width: 0; }
+.filter-row + .filter-row { border-left: 1px solid var(--line); }
+.filter-label { font-size: 12px; font-weight: 700; color: var(--accent-deep); letter-spacing: .04em; width: 100%; text-align: center; }
+.filter-toggles { display: none; }
+.ftoggle {
+  display: flex; align-items: center; justify-content: center; gap: 6px;
+  border: 1px solid var(--line); background: var(--surface); color: var(--muted);
+  border-radius: 10px; padding: 10px 12px; font: inherit; font-size: 14px; cursor: pointer; min-width: 0;
+}
+.ftoggle b { color: var(--ink); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ftoggle .caret { width: 7px; height: 7px; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: rotate(45deg) translateY(-2px); flex: none; }
+.ftoggle[aria-expanded="true"] { border-color: var(--accent); color: var(--accent-deep); }
+.ftoggle[aria-expanded="true"] .caret { transform: rotate(-135deg) translateY(-2px); }
+.ftoggle:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+@media (max-width: 560px) {
+  .filter-toggles { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .filter-panels { display: block; border: 0; }
+  .filter-row { display: none; border: 1px solid var(--line) !important; border-radius: var(--radius); margin-top: 8px; background: var(--soft); }
+  .filter-row.open { display: flex; }
+  .filter-label { display: none; }
+}
 .chip {
   border: 1px solid var(--line); background: var(--surface); color: var(--ink);
   border-radius: 999px; padding: 5px 12px; font: inherit; font-size: 13px; cursor: pointer;
 }
-.chip[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+.chip[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: #fff; font-weight: 700; }
 .chip:focus-visible, .card:focus-visible, .btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
 .legend { display: grid; gap: 6px; font-size: 12px; color: var(--muted); margin-bottom: 16px; }
@@ -100,8 +109,8 @@ h1.board-title { font-family: var(--font-display); font-weight: 400; font-size: 
   background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
   overflow: hidden; text-decoration: none; position: relative;
 }
-.card:hover { border-color: var(--accent); }
-.thumb { border-radius: 8px; background: repeating-linear-gradient(135deg, var(--line) 0 6px, transparent 6px 12px); display: grid; place-items: center; font-size: 12px; color: var(--muted); text-align: center; }
+.card:hover { border-color: var(--accent); box-shadow: 0 4px 14px rgba(0,168,77,.12); }
+.thumb { border-radius: 8px; background: repeating-linear-gradient(135deg, var(--line) 0 6px, var(--soft) 6px 12px); display: grid; place-items: center; font-size: 12px; color: var(--muted); text-align: center; }
 .card .thumb { border-radius: 0; aspect-ratio: 4 / 3; max-width: 100%; border-bottom: 1px solid var(--line); }
 .card-body { min-width: 0; display: grid; gap: 6px; align-content: start; padding: 12px 14px 14px; }
 .card-top { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
@@ -109,7 +118,7 @@ h1.board-title { font-family: var(--font-display); font-weight: 400; font-size: 
 .card-meta { color: var(--muted); font-size: 13px; display: flex; gap: 4px 12px; flex-wrap: wrap; }
 .walk { display: inline-flex; gap: 5px; align-items: center; }
 .walk .line2-dot { width: 16px; height: 16px; font-size: 10px; }
-.tags { display: flex; gap: 6px; flex-wrap: wrap; font-size: 12px; color: var(--accent); }
+.tags { display: flex; gap: 6px; flex-wrap: wrap; font-size: 12px; color: var(--accent-deep); }
 .soon { font-size: 12px; font-weight: 700; color: var(--pre); }
 .d-day { font-variant-numeric: tabular-nums; }
 
@@ -148,8 +157,8 @@ section.block p { margin: 0; max-width: 65ch; }
 
 .actions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 6px; }
 .btn { display: inline-flex; align-items: center; gap: 6px; border-radius: 10px; padding: 10px 16px; font-weight: 700; font-size: 14px; text-decoration: none; border: 1px solid var(--line); background: var(--surface); }
-.btn-primary { background: var(--accent); border-color: var(--accent); color: var(--bg); }
-.btn-pre { background: var(--pre); border-color: var(--pre); color: var(--bg); }
+.btn-primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+.btn-pre { background: var(--pre); border-color: var(--pre); color: #fff; }
 
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
 </style>
@@ -166,8 +175,14 @@ section.block p { margin: 0; max-width: 65ch; }
   <h1 class="board-title">11월 잠실 팝업</h1>
   <p class="board-sub">지금 진행 중인 잠실 일대 팝업 5곳 · 직접 다녀온 후기</p>
   <div class="filters">
-    <div class="filter-row"><span class="filter-label">장소</span><button class="chip" type="button" data-filter="place" data-value="all" aria-pressed="true">전체</button><button class="chip" type="button" data-filter="place" data-value="롯데월드몰" aria-pressed="false">롯데월드몰</button><button class="chip" type="button" data-filter="place" data-value="롯데백화점 잠실점" aria-pressed="false">롯데백화점 잠실점</button><button class="chip" type="button" data-filter="place" data-value="석촌호수" aria-pressed="false">석촌호수</button><button class="chip" type="button" data-filter="place" data-value="송리단길" aria-pressed="false">송리단길</button></div>
-    <div class="filter-row"><span class="filter-label">태그</span><button class="chip" type="button" data-filter="tag" data-value="all" aria-pressed="true">전체</button><button class="chip" type="button" data-filter="tag" data-value="캐릭터" aria-pressed="false">#캐릭터</button><button class="chip" type="button" data-filter="tag" data-value="뷰티" aria-pressed="false">#뷰티</button><button class="chip" type="button" data-filter="tag" data-value="F&amp;B" aria-pressed="false">#F&amp;B</button><button class="chip" type="button" data-filter="tag" data-value="패션" aria-pressed="false">#패션</button><button class="chip" type="button" data-filter="tag" data-value="전시" aria-pressed="false">#전시</button></div>
+    <div class="filter-toggles">
+      <button class="ftoggle" type="button" id="toggle-place" data-panel="panel-place" aria-expanded="false" aria-controls="panel-place">장소 <b data-current="place">전체</b><span class="caret" aria-hidden="true"></span></button>
+      <button class="ftoggle" type="button" id="toggle-tag" data-panel="panel-tag" aria-expanded="false" aria-controls="panel-tag">태그 <b data-current="tag">전체</b><span class="caret" aria-hidden="true"></span></button>
+    </div>
+    <div class="filter-panels">
+      <div class="filter-row" id="panel-place"><span class="filter-label">장소</span><button class="chip" type="button" data-filter="place" data-value="all" aria-pressed="true">전체</button><button class="chip" type="button" data-filter="place" data-value="롯데월드몰" aria-pressed="false">롯데월드몰</button><button class="chip" type="button" data-filter="place" data-value="롯데백화점 잠실점" aria-pressed="false">롯데백화점 잠실점</button><button class="chip" type="button" data-filter="place" data-value="석촌호수" aria-pressed="false">석촌호수</button><button class="chip" type="button" data-filter="place" data-value="송리단길" aria-pressed="false">송리단길</button></div>
+      <div class="filter-row" id="panel-tag"><span class="filter-label">태그</span><button class="chip" type="button" data-filter="tag" data-value="all" aria-pressed="true">전체</button><button class="chip" type="button" data-filter="tag" data-value="캐릭터" aria-pressed="false">#캐릭터</button><button class="chip" type="button" data-filter="tag" data-value="뷰티" aria-pressed="false">#뷰티</button><button class="chip" type="button" data-filter="tag" data-value="F&amp;B" aria-pressed="false">#F&amp;B</button><button class="chip" type="button" data-filter="tag" data-value="패션" aria-pressed="false">#패션</button><button class="chip" type="button" data-filter="tag" data-value="전시" aria-pressed="false">#전시</button></div>
+    </div>
   </div>
   <div class="legend"><span class="legend-item"><span class="entry entry-free">자유 입장</span><span>예약 없이 바로 입장 (줄이 있으면 서서 대기)</span></span><span class="legend-item"><span class="entry entry-onsite">현장 예약</span><span>현장에서 QR·키오스크로 대기 등록 후 입장</span></span><span class="legend-item"><span class="entry entry-pre">사전 예약</span><span>방문 전 예약 필수 (네이버예약·캐치테이블 등)</span></span></div>
   <ul class="board" id="board">
@@ -286,6 +301,25 @@ section.block p { margin: 0; max-width: 65ch; }
     if (empty) empty.hidden = shown > 0;
   }
 
+  // 모바일 토글: 한 번에 하나의 패널만 열림
+  var toggles = Array.prototype.slice.call(document.querySelectorAll('.ftoggle'));
+  function closePanels() {
+    toggles.forEach(function (t) {
+      t.setAttribute('aria-expanded', 'false');
+      document.getElementById(t.dataset.panel).classList.remove('open');
+    });
+  }
+  toggles.forEach(function (t) {
+    t.addEventListener('click', function () {
+      var wasOpen = t.getAttribute('aria-expanded') === 'true';
+      closePanels();
+      if (!wasOpen) {
+        t.setAttribute('aria-expanded', 'true');
+        document.getElementById(t.dataset.panel).classList.add('open');
+      }
+    });
+  });
+
   document.querySelectorAll('[data-filter]').forEach(function (btn) {
     btn.addEventListener('click', function () {
       var key = btn.dataset.filter;
@@ -294,6 +328,9 @@ section.block p { margin: 0; max-width: 65ch; }
         b.setAttribute('aria-pressed', b === btn ? 'true' : 'false');
       });
       apply();
+      var cur = document.querySelector('[data-current="' + key + '"]');
+      if (cur) cur.textContent = btn.textContent;
+      closePanels();
       // GTM용: 필터 사용 기록
       (window.dataLayer = window.dataLayer || []).push({ event: 'filter_click', filter_type: key, filter_value: btn.dataset.value });
     });
