@@ -1068,6 +1068,7 @@ details.ended .card { background: var(--ended-bg); opacity: .85; }
 .photo-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; margin-bottom: 20px; }
 .photo { padding: 0; border: 0; background: none; cursor: zoom-in; border-radius: 8px; overflow: hidden; aspect-ratio: 1; max-width: 100%; display: block; }
 .photo img, .photo .thumb { width: 100%; height: 100%; object-fit: cover; display: grid; }
+.photo-empty { width: 100%; aspect-ratio: 16 / 7; border-radius: 8px; margin-bottom: 20px; display: grid; place-items: center; }
 .photo:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 @media (max-width: 480px) { .photo-strip { grid-template-columns: repeat(2, 1fr); } .photo { aspect-ratio: 4 / 3; } }
 
@@ -1123,7 +1124,7 @@ section.block p { margin: 0; max-width: 65ch; }
     <div class="card-meta"><span>롯데월드몰 5층</span><span class="d-day">10.10 ~ 11.2</span></div>
   </div>
 
-  <div class="photo-strip"><button class="photo" type="button" data-index="0" data-src="" data-caption="입구 전경" aria-label="입구 전경 사진 크게 보기"><span class="thumb">입구 전경</span></button><button class="photo" type="button" data-index="1" data-src="" data-caption="내부 분위기" aria-label="내부 분위기 사진 크게 보기"><span class="thumb">내부 분위기</span></button><button class="photo" type="button" data-index="2" data-src="" data-caption="대표 포토존" aria-label="대표 포토존 사진 크게 보기"><span class="thumb">대표 포토존</span></button><button class="photo" type="button" data-index="3" data-src="" data-caption="상품·가격표" aria-label="상품·가격표 사진 크게 보기"><span class="thumb">상품·가격표</span></button></div>
+  <div class="photo-empty thumb">사진 준비 중</div>
   <div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="사진 크게 보기">
     <button class="lb-btn lb-close" type="button" data-lb="close" aria-label="닫기">×</button>
     <button class="lb-btn lb-prev" type="button" data-lb="prev" aria-label="이전 사진">‹</button>
