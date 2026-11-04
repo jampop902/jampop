@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>립 틴트 컬러 랩 후기 | 위치·가격·혼잡도 (롯데월드몰 지하 1층) - 잠실 팝업</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="립 틴트 컬러 랩 자유 입장, 롯데월드몰 지하 1층, 잠실역 개찰구에서 도보 4분. 11.1~11.5 운영. 직접 방문한 혼잡도·상품 가격 후기.">
+<link rel="canonical" href="https://jampop902.github.io/jampop/popup/lip-tint-lab.html">
+<meta property="og:title" content="립 틴트 컬러 랩 후기 | 위치·가격·혼잡도 (롯데월드몰 지하 1층) - 잠실 팝업">
+<meta property="og:description" content="립 틴트 컬러 랩 자유 입장, 롯데월드몰 지하 1층, 잠실역 개찰구에서 도보 4분. 11.1~11.5 운영. 직접 방문한 혼잡도·상품 가격 후기.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gugi&family=IBM+Plex+Sans+KR:wght@400;700&display=swap">
+<!-- GTM: site.config.json 의 gtmId 에 GTM-XXXX 를 넣으면 자동으로 들어갑니다 -->
+<style>/* Layout: 한 줄 목록형 게시판 — 입장권 모양 카드가 세로로 쌓이고, 상세는 한 장짜리 방문 기록지 */
+:root {
+  --bg: #f6f7f5;
+  --surface: #ffffff;
+  --ink: #18201c;
+  --muted: #5d6862;
+  --line: #dde3df;
+  --accent: #1f3a5f;
+  --line2: #00a84d;            /* 지하철 2호선 */
+  --free: #1b8a4a;  --free-bg: #e4f4ea;
+  --onsite: #9a6a00; --onsite-bg: #fbf0d4;
+  --pre: #c2352b;   --pre-bg: #fbe4e1;
+  --ended-bg: #eceeed;
+  --font-display: "Gugi", "IBM Plex Sans KR", system-ui, sans-serif;
+  --font-body: "IBM Plex Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
+  --radius: 12px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #111613; --surface: #1a211d; --ink: #e8ede9; --muted: #a2aea7; --line: #2c3530;
+    --accent: #9cc0ec; --line2: #2fd27a;
+    --free: #5fd28c; --free-bg: #173524; --onsite: #f0c25a; --onsite-bg: #3a2f12;
+    --pre: #ff8a7f; --pre-bg: #3d1c19; --ended-bg: #222a26;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #111613; --surface: #1a211d; --ink: #e8ede9; --muted: #a2aea7; --line: #2c3530;
+  --accent: #9cc0ec; --line2: #2fd27a;
+  --free: #5fd28c; --free-bg: #173524; --onsite: #f0c25a; --onsite-bg: #3a2f12;
+  --pre: #ff8a7f; --pre-bg: #3d1c19; --ended-bg: #222a26;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--bg); color: var(--ink);
+  font-family: var(--font-body); font-size: 15px; line-height: 1.6;
+}
+a { color: inherit; }
+.wrap {
+  max-width: 760px; margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 20px 56px;
+}
+
+/* 상단 */
+.site-top { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding-block: 4px 18px; }
+.site-name { font-weight: 700; text-decoration: none; font-size: 15px; display: inline-flex; align-items: center; gap: 8px; }
+.line2-dot { width: 22px; height: 22px; border-radius: 50%; background: var(--line2); color: #fff; font-size: 12px; font-weight: 700; display: inline-grid; place-items: center; }
+.updated { color: var(--muted); font-size: 13px; }
+
+.sample-note { background: var(--onsite-bg); color: var(--onsite); border-radius: 8px; padding: 8px 12px; font-size: 13px; margin-bottom: 18px; }
+
+h1.board-title { font-family: var(--font-display); font-weight: 400; font-size: clamp(28px, 7vw, 40px); line-height: 1.2; margin: 0 0 6px; text-wrap: balance; }
+.board-sub { color: var(--muted); margin: 0 0 20px; }
+
+/* 필터 */
+.filters { display: grid; gap: 10px; margin-bottom: 18px; }
+.filter-row { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
+.filter-label { font-size: 12px; color: var(--muted); letter-spacing: .04em; width: 34px; flex: none; }
+.chip {
+  border: 1px solid var(--line); background: var(--surface); color: var(--ink);
+  border-radius: 999px; padding: 5px 12px; font: inherit; font-size: 13px; cursor: pointer;
+}
+.chip[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+.chip:focus-visible, .card:focus-visible, .btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.legend { display: grid; gap: 6px; font-size: 12px; color: var(--muted); margin-bottom: 16px; }
+.legend-item { display: flex; gap: 8px; align-items: center; }
+.legend-item .entry { min-width: 74px; }
+
+/* 입장 방식 뱃지 */
+.entry { display: inline-flex; align-items: center; gap: 5px; font-size: 12px; font-weight: 700; border-radius: 6px; padding: 2px 8px; white-space: nowrap; }
+.entry::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
+.entry-free { color: var(--free); background: var(--free-bg); }
+.entry-onsite { color: var(--onsite); background: var(--onsite-bg); }
+.entry-pre { color: var(--pre); background: var(--pre-bg); }
+
+/* 게시판 목록 */
+.board { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 230px), 1fr)); }
+.board > li { display: flex; }
+.card {
+  display: flex; flex-direction: column; width: 100%;
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+  overflow: hidden; text-decoration: none; position: relative;
+}
+.card:hover { border-color: var(--accent); }
+.thumb { border-radius: 8px; background: repeating-linear-gradient(135deg, var(--line) 0 6px, transparent 6px 12px); display: grid; place-items: center; font-size: 12px; color: var(--muted); text-align: center; }
+.card .thumb { border-radius: 0; aspect-ratio: 4 / 3; max-width: 100%; border-bottom: 1px solid var(--line); }
+.card-body { min-width: 0; display: grid; gap: 6px; align-content: start; padding: 12px 14px 14px; }
+.card-top { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
+.card-name { font-weight: 700; font-size: 16px; line-height: 1.35; }
+.card-meta { color: var(--muted); font-size: 13px; display: flex; gap: 4px 12px; flex-wrap: wrap; }
+.walk { display: inline-flex; gap: 5px; align-items: center; }
+.walk .line2-dot { width: 16px; height: 16px; font-size: 10px; }
+.tags { display: flex; gap: 6px; flex-wrap: wrap; font-size: 12px; color: var(--accent); }
+.soon { font-size: 12px; font-weight: 700; color: var(--pre); }
+.d-day { font-variant-numeric: tabular-nums; }
+
+.empty { color: var(--muted); text-align: center; padding: 32px 0; }
+
+details.ended { margin-top: 28px; }
+details.ended summary { cursor: pointer; color: var(--muted); font-size: 14px; }
+details.ended .card { background: var(--ended-bg); opacity: .85; }
+
+.site-foot { margin-top: 40px; font-size: 12px; color: var(--muted); border-top: 1px solid var(--line); padding-top: 14px; }
+
+/* 상세 */
+.crumb { font-size: 13px; color: var(--muted); text-decoration: none; display: inline-block; margin-bottom: 14px; }
+.ended-banner { background: var(--ended-bg); border-radius: 8px; padding: 8px 12px; font-size: 13px; margin-bottom: 14px; }
+.detail-head { display: grid; gap: 8px; margin-bottom: 18px; }
+.detail-head h1 { font-family: var(--font-display); font-weight: 400; font-size: clamp(26px, 6.5vw, 36px); line-height: 1.25; margin: 0; text-wrap: balance; }
+.photo-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; margin-bottom: 20px; }
+.photo-strip .thumb { min-height: 0; aspect-ratio: 1; max-width: 100%; }
+@media (max-width: 480px) { .photo-strip { grid-template-columns: repeat(2, 1fr); } .photo-strip .thumb { aspect-ratio: 4 / 3; } }
+
+.facts { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); margin: 0 0 20px; }
+.fact { display: grid; grid-template-columns: 96px 1fr; gap: 12px; padding: 12px 14px; border-top: 1px solid var(--line); }
+.fact:first-child { border-top: 0; }
+.fact dt { color: var(--muted); font-size: 13px; }
+.fact dd { margin: 0; min-width: 0; }
+.fact small { display: block; color: var(--muted); font-size: 12px; }
+
+section.block { margin-bottom: 24px; }
+section.block h2 { font-size: 16px; margin: 0 0 8px; }
+section.block p { margin: 0; max-width: 65ch; }
+.pending { color: var(--muted); font-size: 14px; }
+
+.goods { width: 100%; border-collapse: collapse; font-size: 14px; }
+.goods td { padding: 8px 0; border-bottom: 1px solid var(--line); }
+.goods td:last-child { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+.actions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 6px; }
+.btn { display: inline-flex; align-items: center; gap: 6px; border-radius: 10px; padding: 10px 16px; font-weight: 700; font-size: 14px; text-decoration: none; border: 1px solid var(--line); background: var(--surface); }
+.btn-primary { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+.btn-pre { background: var(--pre); border-color: var(--pre); color: var(--bg); }
+
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="site-top">
+  <a class="site-name" href="../index.html"><span class="line2-dot">2</span>잠팝</a>
+  <span class="updated">11.4(수) 업데이트</span>
+</header>
+<p class="sample-note">지금 보이는 팝업은 화면 확인용 <b>예시</b>입니다. 실제 방문 후기로 교체 예정이에요.</p>
+
+<main>
+  <a class="crumb" href="../index.html">← 11월 잠실 팝업 목록</a>
+  
+  <div class="detail-head">
+    <div class="card-top"><span class="entry entry-free">자유 입장</span><span class="tags">#뷰티</span></div>
+    <h1>[예시] 립 틴트 컬러 랩</h1>
+    <div class="card-meta"><span>롯데월드몰 지하 1층</span><span class="d-day">11.1 ~ 11.5</span></div>
+  </div>
+
+  <div class="photo-strip"><div class="thumb" aria-hidden="true">입구 전경</div><div class="thumb" aria-hidden="true">내부 분위기</div><div class="thumb" aria-hidden="true">대표 포토존</div><div class="thumb" aria-hidden="true">상품·가격표</div></div>
+
+  <dl class="facts">
+    <div class="fact"><dt>입장 방식</dt><dd><span class="entry entry-free">자유 입장</span> <small>예약 없이 바로 입장 (줄이 있으면 서서 대기)</small></dd></div>
+    <div class="fact"><dt>위치</dt><dd>롯데월드몰 지하 1층<small><span class="walk"><span class="line2-dot">2</span>잠실역 2호선 개찰구에서 도보 4분 · 롯데월드몰 지하 연결 통로</span></small></dd></div>
+    <div class="fact"><dt>운영 기간</dt><dd>11.1(일) ~ 11.5(목)</dd></div>
+    <div class="fact"><dt>운영 시간</dt><dd>10:30 ~ 22:00</dd></div>
+    <div class="fact"><dt>혼잡도</dt><dd>여유 · 웨이팅 없음<small>11.2(월) 오후 2시 방문 기준 · 줄 없이 바로 입장했어요.</small></dd></div>
+  </dl>
+
+  <section class="block">
+    <h2>직접 가본 후기</h2>
+    <p>테스터 20종을 직접 발라볼 수 있고, 퍼스널 컬러 진단(약 5분)을 무료로 해줍니다. 구매하지 않아도 체험 가능해요.</p>
+  </section>
+
+  <section class="block">
+    <h2>상품 가격</h2>
+    <table class="goods"><tbody><tr><td>립 틴트 단품</td><td>14,000원</td></tr><tr><td>팝업 한정 2종 세트</td><td>25,000원</td></tr></tbody></table>
+  </section>
+
+  <div class="actions">
+    
+    <a class="btn btn-primary" href="https://www.instagram.com/" target="_blank" rel="noopener" data-track="official_click" data-popup="lip-tint-lab">공식 페이지</a>
+    <a class="btn" href="https://map.kakao.com/link/search/%EB%A1%AF%EB%8D%B0%EC%9B%94%EB%93%9C%EB%AA%B0" target="_blank" rel="noopener" data-track="directions_click" data-popup="lip-tint-lab">카카오맵 길찾기</a>
+  </div>
+</main>
+<footer class="site-foot">모든 후기는 운영자가 매주 월요일 오후 2시 방문 기준으로 직접 다녀와서 작성합니다. 공식 이미지는 쓰지 않고 공식 페이지로 연결해요.</footer>
+</div>
+<script>// 메인 게시판 필터 (장소 / 태그) — 목록 내용은 HTML에 이미 들어 있어 검색엔진이 읽을 수 있고,
+// 여기서는 보이기/숨기기만 합니다.
+(function () {
+  var board = document.getElementById('board');
+  if (!board) return;
+  var state = { place: 'all', tag: 'all' };
+  var cards = Array.prototype.slice.call(board.querySelectorAll('[data-place]'));
+  var empty = document.getElementById('empty');
+
+  function apply() {
+    var shown = 0;
+    cards.forEach(function (li) {
+      var okPlace = state.place === 'all' || li.dataset.place === state.place;
+      var okTag = state.tag === 'all' || li.dataset.tags.split(',').indexOf(state.tag) > -1;
+      li.hidden = !(okPlace && okTag);
+      if (!li.hidden) shown++;
+    });
+    if (empty) empty.hidden = shown > 0;
+  }
+
+  document.querySelectorAll('[data-filter]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var key = btn.dataset.filter;
+      state[key] = btn.dataset.value;
+      document.querySelectorAll('[data-filter="' + key + '"]').forEach(function (b) {
+        b.setAttribute('aria-pressed', b === btn ? 'true' : 'false');
+      });
+      apply();
+      // GTM용: 필터 사용 기록
+      (window.dataLayer = window.dataLayer || []).push({ event: 'filter_click', filter_type: key, filter_value: btn.dataset.value });
+    });
+  });
+})();
+
+// 클릭 기록 (GTM에서 이 이벤트들로 트리거를 만들면 됩니다)
+document.addEventListener('click', function (e) {
+  var el = e.target.closest('[data-track]');
+  if (!el) return;
+  (window.dataLayer = window.dataLayer || []).push({
+    event: el.dataset.track,
+    popup_slug: el.dataset.popup || '',
+    popup_place: el.dataset.placeName || ''
+  });
+});
+</script>
+</body>
+</html>

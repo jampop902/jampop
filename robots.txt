@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://jampop902.github.io/jampop/sitemap.xml
