@@ -1035,7 +1035,7 @@ h1.board-title { font-family: var(--font-title); font-weight: 800; letter-spacin
 }
 .card:hover { border-color: var(--accent); box-shadow: 0 4px 14px rgba(0,168,77,.12); }
 .thumb { border-radius: 8px; background: repeating-linear-gradient(135deg, var(--line) 0 6px, var(--soft) 6px 12px); display: grid; place-items: center; font-size: 12px; color: var(--muted); text-align: center; }
-.card .thumb { border-radius: 0; aspect-ratio: 4 / 3; max-width: 100%; border-bottom: 1px solid var(--line); }
+.card .thumb { border-radius: 0; aspect-ratio: 4 / 3; object-fit: cover; width: 100%; max-width: 100%; border-bottom: 1px solid var(--line); }
 .card-body { min-width: 0; display: grid; gap: 6px; align-content: start; padding: 12px 14px 14px; }
 @media (min-width: 561px) {
   .card { flex-direction: row; }
@@ -1132,7 +1132,7 @@ section.block p { margin: 0; max-width: 65ch; }
   <ul class="board" id="board">
 <li data-place="롯데월드몰" data-tags="뷰티">
   <a class="card" href="popup/lip-tint-lab.html" data-track="card_click" data-popup="lip-tint-lab" data-place-name="롯데월드몰">
-    <div class="thumb" aria-hidden="true">사진<br>준비 중</div>
+    <img class="thumb" src="images/lip-tint-lab-1.jpg" alt="립 틴트 컬러 랩" loading="lazy">
     <div class="card-body">
       <div class="card-top"><span class="entry entry-free">자유 입장</span><span class="soon d-day">D-1 종료 임박</span></div>
       <div class="card-name">[예시] 립 틴트 컬러 랩</div>

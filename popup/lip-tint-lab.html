@@ -1035,7 +1035,7 @@ h1.board-title { font-family: var(--font-title); font-weight: 800; letter-spacin
 }
 .card:hover { border-color: var(--accent); box-shadow: 0 4px 14px rgba(0,168,77,.12); }
 .thumb { border-radius: 8px; background: repeating-linear-gradient(135deg, var(--line) 0 6px, var(--soft) 6px 12px); display: grid; place-items: center; font-size: 12px; color: var(--muted); text-align: center; }
-.card .thumb { border-radius: 0; aspect-ratio: 4 / 3; max-width: 100%; border-bottom: 1px solid var(--line); }
+.card .thumb { border-radius: 0; aspect-ratio: 4 / 3; object-fit: cover; width: 100%; max-width: 100%; border-bottom: 1px solid var(--line); }
 .card-body { min-width: 0; display: grid; gap: 6px; align-content: start; padding: 12px 14px 14px; }
 @media (min-width: 561px) {
   .card { flex-direction: row; }
@@ -1124,7 +1124,7 @@ section.block p { margin: 0; max-width: 65ch; }
     <div class="card-meta"><span>롯데월드몰 지하 1층</span><span class="d-day">11.1 ~ 11.5</span></div>
   </div>
 
-  <div class="photo-empty thumb">사진 준비 중</div>
+  <div class="photo-strip"><button class="photo" type="button" data-index="0" data-src="../images/lip-tint-lab-1.jpg" data-caption="입구" aria-label="사진 크게 보기"><img src="../images/lip-tint-lab-1.jpg" alt="입구" loading="lazy"></button><button class="photo" type="button" data-index="1" data-src="../images/lip-tint-lab-2.jpg" data-caption="내부" aria-label="사진 크게 보기"><img src="../images/lip-tint-lab-2.jpg" alt="내부" loading="lazy"></button><button class="photo" type="button" data-index="2" data-src="../images/lip-tint-lab-3.jpg" data-caption="대표 상품" aria-label="사진 크게 보기"><img src="../images/lip-tint-lab-3.jpg" alt="대표 상품" loading="lazy"></button><button class="photo" type="button" data-index="3" data-src="../images/lip-tint-lab-4.jpg" data-caption="포토존" aria-label="사진 크게 보기"><img src="../images/lip-tint-lab-4.jpg" alt="포토존" loading="lazy"></button><button class="photo" type="button" data-index="4" data-src="../images/lip-tint-lab-5.jpg" data-caption="가격표" aria-label="사진 크게 보기"><img src="../images/lip-tint-lab-5.jpg" alt="가격표" loading="lazy"></button></div>
   <div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="사진 크게 보기">
     <button class="lb-btn lb-close" type="button" data-lb="close" aria-label="닫기">×</button>
     <button class="lb-btn lb-prev" type="button" data-lb="prev" aria-label="이전 사진">‹</button>
