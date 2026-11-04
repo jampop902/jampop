@@ -10,7 +10,7 @@
 <meta property="og:title" content="스니커 아카이브 전시 후기 | 위치·가격·혼잡도 (롯데백화점 잠실점 에비뉴엘 6층) - 잠실 팝업">
 <meta property="og:description" content="스니커 아카이브 전시 사전 예약, 롯데백화점 잠실점 에비뉴엘 6층, 잠실역 개찰구에서 도보 3분. 10.24~11.23 운영. 직접 방문한 혼잡도·상품 가격 후기.">
 <meta property="og:type" content="website">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gugi&family=IBM+Plex+Sans+KR:wght@400;700&display=swap">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gugi&family=Noto+Sans+KR:wght@400;500;700&display=swap">
 <!-- GTM: site.config.json 의 gtmId 에 GTM-XXXX 를 넣으면 자동으로 들어갑니다 -->
 <style>/* Layout: 흰 바탕 + 2호선 초록 — 상단에 2호선 노선 띠, 사진이 큰 카드형 게시판. 밝은 톤 한 가지로 고정 */
 :root {
@@ -27,8 +27,8 @@
   --onsite: #9a6a00; --onsite-bg: #fdf3d6;
   --pre: #d0362c;   --pre-bg: #fde6e3;
   --ended-bg: #f3f5f4;
-  --font-display: "Gugi", "IBM Plex Sans KR", system-ui, sans-serif;
-  --font-body: "IBM Plex Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
+  --font-logo: "Gugi", "Noto Sans KR", system-ui, sans-serif;
+  --font-body: "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
   --radius: 14px;
   color-scheme: light;
 }
@@ -48,14 +48,14 @@ a { color: inherit; }
 
 /* 상단 */
 .site-top { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding-block: 6px 16px; margin-bottom: 22px; border-bottom: 4px solid var(--accent); }
-.site-name { font-family: var(--font-display); font-size: 34px; line-height: 1; color: var(--accent); text-decoration: none; display: inline-flex; align-items: center; gap: 10px; letter-spacing: .01em; }
+.site-name { font-family: var(--font-logo); font-size: 34px; line-height: 1; color: var(--accent); text-decoration: none; display: inline-flex; align-items: center; gap: 10px; letter-spacing: .01em; }
 .site-name .line2-dot { width: 34px; height: 34px; font-size: 18px; font-family: var(--font-body); }
 .line2-dot { width: 22px; height: 22px; border-radius: 50%; background: var(--line2); color: #fff; font-size: 12px; font-weight: 700; display: inline-grid; place-items: center; }
 .updated { color: var(--muted); font-size: 13px; }
 
 .sample-note { background: var(--soft); color: var(--accent-deep); border-radius: 8px; padding: 8px 12px; font-size: 13px; margin-bottom: 18px; }
 
-h1.board-title { font-family: var(--font-display); font-weight: 400; font-size: clamp(28px, 7vw, 40px); line-height: 1.2; margin: 0 0 6px; text-wrap: balance; }
+h1.board-title { font-family: var(--font-body); font-weight: 700; letter-spacing: -0.02em; font-size: clamp(28px, 7vw, 40px); line-height: 1.2; margin: 0 0 6px; text-wrap: balance; }
 .board-sub { color: var(--muted); margin: 0 0 20px; }
 
 /* 필터 */
@@ -134,7 +134,7 @@ details.ended .card { background: var(--ended-bg); opacity: .85; }
 .crumb { font-size: 13px; color: var(--muted); text-decoration: none; display: inline-block; margin-bottom: 14px; }
 .ended-banner { background: var(--ended-bg); border-radius: 8px; padding: 8px 12px; font-size: 13px; margin-bottom: 14px; }
 .detail-head { display: grid; gap: 8px; margin-bottom: 18px; }
-.detail-head h1 { font-family: var(--font-display); font-weight: 400; font-size: clamp(26px, 6.5vw, 36px); line-height: 1.25; margin: 0; text-wrap: balance; }
+.detail-head h1 { font-family: var(--font-body); font-weight: 700; letter-spacing: -0.02em; font-size: clamp(26px, 6.5vw, 36px); line-height: 1.25; margin: 0; text-wrap: balance; }
 .photo-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; margin-bottom: 20px; }
 .photo-strip .thumb { min-height: 0; aspect-ratio: 1; max-width: 100%; }
 @media (max-width: 480px) { .photo-strip { grid-template-columns: repeat(2, 1fr); } .photo-strip .thumb { aspect-ratio: 4 / 3; } }
