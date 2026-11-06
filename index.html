@@ -11,12 +11,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- End Google Tag Manager -->
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>11월 잠실 팝업 — 지금 진행 중 | 잠팝</title>
-<meta name="description" content="11월 잠실 팝업스토어 5곳을 한눈에. 롯데월드몰·석촌호수·송리단길 팝업의 입장 방식, 위치, 가격을 직접 방문 후기로 정리했어요.">
+<meta name="description" content="11월 잠실 팝업스토어 5곳을 한눈에. 롯데월드몰·롯데백화점 잠실점 팝업의 입장 방식, 위치, 가격을 직접 방문 후기로 정리했어요.">
 <link rel="canonical" href="https://jampop902.github.io/jampop/">
 <meta property="og:title" content="11월 잠실 팝업 — 지금 진행 중 | 잠팝">
-<meta property="og:description" content="11월 잠실 팝업스토어 5곳을 한눈에. 롯데월드몰·석촌호수·송리단길 팝업의 입장 방식, 위치, 가격을 직접 방문 후기로 정리했어요.">
+<meta property="og:description" content="11월 잠실 팝업스토어 5곳을 한눈에. 롯데월드몰·롯데백화점 잠실점 팝업의 입장 방식, 위치, 가격을 직접 방문 후기로 정리했어요.">
 <meta property="og:type" content="website">
-<!-- GTM: site.config.json 의 gtmId 에 GTM-XXXX 를 넣으면 자동으로 들어갑니다 -->
 <style>
 
 @font-face {
@@ -1112,6 +1111,22 @@ section.block p { margin: 0; max-width: 65ch; }
 .btn-primary { background: var(--accent); border-color: var(--accent); color: #fff; }
 .btn-pre { background: var(--pre); border-color: var(--pre); color: #fff; }
 
+
+/* 11.6 실제 팝업용 추가 */
+.review-items { list-style: none; margin: 0 0 12px; padding: 0; display: grid; gap: 10px; }
+.review-items li { background: var(--soft); border-radius: 10px; padding: 12px 14px; }
+.ri-head { display: flex; justify-content: space-between; gap: 10px; align-items: baseline; margin-bottom: 4px; }
+.ri-head span { color: var(--muted); font-size: 13px; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.review-items p { margin: 0; }
+section.block p + p { margin-top: 10px; }
+.menu h3 { font-family: var(--font-title); font-size: 15px; font-weight: 700; color: var(--accent-deep); margin: 18px 0 2px; }
+.menu h3:first-of-type { margin-top: 4px; }
+.goods td:first-child { padding-right: 12px; }
+.goods s { color: var(--muted); font-size: 12px; margin-right: 4px; }
+.goods b { color: var(--pre); }
+.mini-badge { display: inline-block; font-size: 11px; font-weight: 700; color: var(--accent-deep); background: var(--free-bg); border-radius: 4px; padding: 0 5px; margin-left: 4px; vertical-align: 1px; white-space: nowrap; }
+.note { color: var(--muted); font-size: 13px; margin-top: 12px !important; }
+.fact small + small { margin-top: 2px; }
 </style>
 </head>
 <body>
@@ -1122,120 +1137,135 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="wrap">
 <header class="site-top">
   <a class="site-name" href="index.html"><span class="line2-dot">2</span>잠팝</a>
-  <span class="updated">11.4(수) 업데이트</span>
+  <span class="updated">11.6(금) 업데이트</span>
 </header>
-<p class="sample-note">지금 보이는 팝업은 화면 확인용 <b>예시</b>입니다. 실제 방문 후기로 교체 예정이에요.</p>
-
 <main>
   <h1 class="board-title">11월 잠실 팝업</h1>
-  <p class="board-sub">지금 진행 중인 잠실 일대 팝업 5곳 · 직접 다녀온 후기</p>
+  <p class="board-sub">지금 진행 중인 잠실 일대 팝업 <span id="live-count">5</span>곳 · 직접 다녀온 후기</p>
   <div class="filters">
     <div class="filter-toggles">
       <button class="ftoggle" type="button" id="toggle-place" data-panel="panel-place" aria-expanded="false" aria-controls="panel-place">장소 <b data-current="place">전체</b><span class="caret" aria-hidden="true"></span></button>
       <button class="ftoggle" type="button" id="toggle-tag" data-panel="panel-tag" aria-expanded="false" aria-controls="panel-tag">태그 <b data-current="tag">전체</b><span class="caret" aria-hidden="true"></span></button>
     </div>
     <div class="filter-panels">
-      <div class="filter-row" id="panel-place"><span class="filter-label">장소</span><button class="chip" type="button" data-filter="place" data-value="all" aria-pressed="true">전체</button><button class="chip" type="button" data-filter="place" data-value="롯데월드몰" aria-pressed="false">롯데월드몰</button><button class="chip" type="button" data-filter="place" data-value="롯데백화점 잠실점" aria-pressed="false">롯데백화점 잠실점</button><button class="chip" type="button" data-filter="place" data-value="석촌호수" aria-pressed="false">석촌호수</button><button class="chip" type="button" data-filter="place" data-value="송리단길" aria-pressed="false">송리단길</button></div>
-      <div class="filter-row" id="panel-tag"><span class="filter-label">태그</span><button class="chip" type="button" data-filter="tag" data-value="all" aria-pressed="true">전체</button><button class="chip" type="button" data-filter="tag" data-value="캐릭터" aria-pressed="false">#캐릭터</button><button class="chip" type="button" data-filter="tag" data-value="뷰티" aria-pressed="false">#뷰티</button><button class="chip" type="button" data-filter="tag" data-value="F&amp;B" aria-pressed="false">#F&amp;B</button><button class="chip" type="button" data-filter="tag" data-value="패션" aria-pressed="false">#패션</button><button class="chip" type="button" data-filter="tag" data-value="전시" aria-pressed="false">#전시</button></div>
+      <div class="filter-row" id="panel-place"><span class="filter-label">장소</span><button class="chip" type="button" data-filter="place" data-value="all" aria-pressed="true">전체</button><button class="chip" type="button" data-filter="place" data-value="롯데월드몰" aria-pressed="false">롯데월드몰</button><button class="chip" type="button" data-filter="place" data-value="롯데백화점 잠실점" aria-pressed="false">롯데백화점 잠실점</button></div>
+      <div class="filter-row" id="panel-tag"><span class="filter-label">태그</span><button class="chip" type="button" data-filter="tag" data-value="all" aria-pressed="true">전체</button><button class="chip" type="button" data-filter="tag" data-value="캐릭터" aria-pressed="false">#캐릭터</button><button class="chip" type="button" data-filter="tag" data-value="베이커리" aria-pressed="false">#베이커리</button><button class="chip" type="button" data-filter="tag" data-value="디저트" aria-pressed="false">#디저트</button><button class="chip" type="button" data-filter="tag" data-value="주류" aria-pressed="false">#주류</button><button class="chip" type="button" data-filter="tag" data-value="전시" aria-pressed="false">#전시</button></div>
     </div>
   </div>
   <div class="legend"><span class="legend-item"><span class="entry entry-free">자유 입장</span><span>예약 없이 바로 입장 (줄이 있으면 서서 대기)</span></span><span class="legend-item"><span class="entry entry-onsite">현장 예약</span><span>현장에서 QR·키오스크로 대기 등록 후 입장</span></span><span class="legend-item"><span class="entry entry-pre">사전 예약</span><span>방문 전 예약 필수 (네이버예약·캐치테이블 등)</span></span></div>
   <ul class="board" id="board">
-<li data-place="롯데월드몰" data-tags="뷰티">
-  <a class="card" href="popup/lip-tint-lab.html" data-track="card_click" data-popup="lip-tint-lab" data-place-name="롯데월드몰">
-    <img class="thumb" src="images/lip-tint-lab-1.jpg" alt="립 틴트 컬러 랩" loading="lazy">
+<li data-place="롯데월드몰" data-tags="캐릭터" data-start="2026-10-26" data-end="2026-11-08">
+  <a class="card" href="popup/lovelybon.html" data-track="card_click" data-popup="lovelybon" data-place-name="롯데월드몰">
+    <img class="thumb" src="images/lovelybon-1.jpg" alt="러블리본" loading="lazy">
     <div class="card-body">
-      <div class="card-top"><span class="entry entry-free">자유 입장</span><span class="soon d-day">D-1 종료 임박</span></div>
-      <div class="card-name">[예시] 립 틴트 컬러 랩</div>
+      <div class="card-top"><span class="entry entry-free">자유 입장</span><span class="soon d-day" data-dday></span></div>
+      <div class="card-name">러블리본</div>
       <div class="card-meta">
-        <span>롯데월드몰 지하 1층</span>
-        <span class="walk"><span class="line2-dot">2</span>개찰구에서 도보 4분</span>
-        <span class="d-day">~11.5</span>
-      </div>
-      <div class="tags">#뷰티</div>
-    </div>
-  </a>
-</li>
-<li data-place="롯데월드몰" data-tags="캐릭터">
-  <a class="card" href="popup/bear-winter-goods.html" data-track="card_click" data-popup="bear-winter-goods" data-place-name="롯데월드몰">
-    <div class="thumb" aria-hidden="true">사진<br>준비 중</div>
-    <div class="card-body">
-      <div class="card-top"><span class="entry entry-onsite">현장 예약</span></div>
-      <div class="card-name">[예시] 곰돌이 겨울 굿즈 팝업</div>
-      <div class="card-meta">
-        <span>롯데월드몰 1층 아트리움</span>
-        <span class="walk"><span class="line2-dot">2</span>개찰구에서 도보 6분</span>
-        <span class="d-day">~11.16</span>
+        <span>롯데월드몰 2층</span>
+        <span class="walk"><span class="line2-dot">2</span>개찰구에서 도보 11분</span>
+        <span class="d-day">~11.8</span>
       </div>
       <div class="tags">#캐릭터</div>
     </div>
   </a>
 </li>
-<li data-place="롯데백화점 잠실점" data-tags="패션,전시">
-  <a class="card" href="popup/sneaker-archive.html" data-track="card_click" data-popup="sneaker-archive" data-place-name="롯데백화점 잠실점">
-    <div class="thumb" aria-hidden="true">사진<br>준비 중</div>
+<li data-place="롯데백화점 잠실점" data-tags="베이커리,디저트" data-start="2026-10-29" data-end="2026-11-12">
+  <a class="card" href="popup/lebon-mariage.html" data-track="card_click" data-popup="lebon-mariage" data-place-name="롯데백화점 잠실점">
+    <img class="thumb" src="images/lebon-mariage-1.jpg" alt="르봉마리아쥬" loading="lazy">
     <div class="card-body">
-      <div class="card-top"><span class="entry entry-pre">사전 예약</span></div>
-      <div class="card-name">[예시] 스니커 아카이브 전시</div>
+      <div class="card-top"><span class="entry entry-free">자유 입장</span><span class="soon d-day" data-dday></span></div>
+      <div class="card-name">르봉마리아쥬</div>
       <div class="card-meta">
-        <span>롯데백화점 잠실점 에비뉴엘 6층</span>
-        <span class="walk"><span class="line2-dot">2</span>개찰구에서 도보 3분</span>
-        <span class="d-day">~11.23</span>
+        <span>롯데백화점 잠실점 지하 1층 식품관</span>
+        <span class="walk"><span class="line2-dot">2</span>개찰구에서 도보 2분</span>
+        <span class="d-day">~11.12</span>
       </div>
-      <div class="tags">#패션 #전시</div>
+      <div class="tags">#베이커리 #디저트</div>
     </div>
   </a>
 </li>
-<li data-place="석촌호수" data-tags="F&amp;B">
-  <a class="card" href="popup/lakeside-cafe-week.html" data-track="card_click" data-popup="lakeside-cafe-week" data-place-name="석촌호수">
-    <div class="thumb" aria-hidden="true">방문<br>예정</div>
+<li data-place="롯데백화점 잠실점" data-tags="베이커리" data-start="2026-10-30" data-end="2026-11-12">
+  <a class="card" href="popup/seongsure-ciabatta.html" data-track="card_click" data-popup="seongsure-ciabatta" data-place-name="롯데백화점 잠실점">
+    <img class="thumb" src="images/seongsure-ciabatta-1.jpg" alt="성수르 치아바타" loading="lazy">
     <div class="card-body">
-      <div class="card-top"><span class="entry entry-free">자유 입장</span></div>
-      <div class="card-name">[예시] 석촌호수 디저트 위크</div>
+      <div class="card-top"><span class="entry entry-free">자유 입장</span><span class="soon d-day" data-dday></span></div>
+      <div class="card-name">성수르 치아바타</div>
       <div class="card-meta">
-        <span>석촌호수 서호 산책로 입구</span>
+        <span>롯데백화점 잠실점 지하 1층 식품관</span>
+        <span class="walk"><span class="line2-dot">2</span>개찰구에서 도보 2분</span>
+        <span class="d-day">~11.12</span>
+      </div>
+      <div class="tags">#베이커리</div>
+    </div>
+  </a>
+</li>
+<li data-place="롯데월드몰" data-tags="주류,전시" data-start="2026-11-06" data-end="2026-11-15">
+  <a class="card" href="popup/makers-mark.html" data-track="card_click" data-popup="makers-mark" data-place-name="롯데월드몰">
+    <img class="thumb" src="images/makers-mark-1.jpg" alt="메이커스 마크 독주 스페이스" loading="lazy">
+    <div class="card-body">
+      <div class="card-top"><span class="entry entry-free">자유 입장</span><span class="soon d-day" data-dday></span></div>
+      <div class="card-name">메이커스 마크 독주 스페이스</div>
+      <div class="card-meta">
+        <span>롯데월드몰 1층 아트리움</span>
+        <span class="walk"><span class="line2-dot">2</span>개찰구에서 도보 10분</span>
+        <span class="d-day">~11.15</span>
+      </div>
+      <div class="tags">#주류 #전시</div>
+    </div>
+  </a>
+</li>
+<li data-place="롯데월드몰" data-tags="베이커리,캐릭터" data-start="2026-10-30" data-end="2026-11-18">
+  <a class="card" href="popup/tongtonge.html" data-track="card_click" data-popup="tongtonge" data-place-name="롯데월드몰">
+    <img class="thumb" src="images/tongtonge-1.jpg" alt="이웃집 통통이" loading="lazy">
+    <div class="card-body">
+      <div class="card-top"><span class="entry entry-free">자유 입장</span><span class="soon d-day" data-dday></span></div>
+      <div class="card-name">이웃집 통통이</div>
+      <div class="card-meta">
+        <span>롯데월드몰 지하 1층 행사장</span>
         <span class="walk"><span class="line2-dot">2</span>개찰구에서 도보 9분</span>
-        <span class="d-day">~11.30</span>
+        <span class="d-day">~11.18</span>
       </div>
-      <div class="tags">#F&amp;B</div>
-    </div>
-  </a>
-</li>
-<li data-place="송리단길" data-tags="F&amp;B">
-  <a class="card" href="popup/songridan-tea-house.html" data-track="card_click" data-popup="songridan-tea-house" data-place-name="송리단길">
-    <div class="thumb" aria-hidden="true">방문<br>예정</div>
-    <div class="card-body">
-      <div class="card-top"><span class="entry entry-onsite">현장 예약</span></div>
-      <div class="card-name">[예시] 송리단길 티 하우스</div>
-      <div class="card-meta">
-        <span>송리단길 1층</span>
-        <span class="walk"><span class="line2-dot">2</span>개찰구에서 도보 13분</span>
-        <span class="d-day">~12.6</span>
-      </div>
-      <div class="tags">#F&amp;B</div>
+      <div class="tags">#베이커리 #캐릭터</div>
     </div>
   </a>
 </li>
   </ul>
   <p class="empty" id="empty" hidden>조건에 맞는 팝업이 없어요. 필터를 바꿔보세요.</p>
-  <details class="ended"><summary>종료된 팝업 1곳</summary><ul class="board"><li data-place="롯데월드몰" data-tags="캐릭터">
-  <a class="card" href="popup/halloween-character-pop.html" data-track="card_click" data-popup="halloween-character-pop" data-place-name="롯데월드몰">
-    <div class="thumb" aria-hidden="true">사진<br>준비 중</div>
-    <div class="card-body">
-      <div class="card-top"><span class="entry entry-onsite">현장 예약</span></div>
-      <div class="card-name">[예시] 할로윈 캐릭터 팝업</div>
-      <div class="card-meta">
-        <span>롯데월드몰 5층</span>
-        <span class="walk"><span class="line2-dot">2</span>개찰구에서 도보 7분</span>
-        <span class="d-day">~11.2</span>
-      </div>
-      <div class="tags">#캐릭터</div>
-    </div>
-  </a>
-</li></ul></details>
+  <details class="ended" id="ended" hidden><summary>종료된 팝업 <span id="ended-count">0</span>곳</summary><ul class="board" id="ended-board"></ul></details>
 </main>
-<footer class="site-foot">모든 후기는 운영자가 매주 월요일 오후 2시 방문 기준으로 직접 다녀와서 작성합니다. 공식 이미지는 쓰지 않고 브랜드 공식 계정으로 연결해요.</footer>
+<footer class="site-foot">모든 후기는 운영자가 직접 다녀와서 작성합니다. 메뉴·가격은 방문 당시 기준이라 현장과 다를 수 있어요.</footer>
 </div>
+<script>// 날짜에 따라 자동으로: D-day 표시, 끝난 팝업은 '종료된 팝업'으로 이동
+(function () {
+  var now = new Date();
+  var today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  function d(s) { var a = s.split('-'); return new Date(+a[0], a[1] - 1, +a[2]); }
+  function diff(s) { return Math.round((d(s) - today) / 86400000); }
+
+  var board = document.getElementById('board');
+  if (board) {
+    var endedBoard = document.getElementById('ended-board');
+    var ended = 0;
+    Array.prototype.slice.call(board.querySelectorAll('li[data-end]')).forEach(function (li) {
+      var left = diff(li.dataset.end), toStart = diff(li.dataset.start);
+      var tag = li.querySelector('[data-dday]');
+      if (left < 0) { endedBoard.appendChild(li); ended++; if (tag) tag.remove(); return; }
+      if (!tag) return;
+      if (toStart > 0) { var s = d(li.dataset.start); tag.textContent = (s.getMonth() + 1) + '.' + s.getDate() + ' 오픈'; tag.classList.add('opens'); }
+      else if (left === 0) tag.textContent = '오늘 종료';
+      else if (left <= 3) tag.textContent = 'D-' + left + ' 종료 임박';
+      else tag.remove();
+    });
+    if (ended) {
+      document.getElementById('ended').hidden = false;
+      document.getElementById('ended-count').textContent = ended;
+      document.getElementById('live-count').textContent = board.querySelectorAll('li[data-end]').length;
+    }
+  }
+  var main = document.querySelector('main[data-end]');
+  if (main && diff(main.dataset.end) < 0) document.getElementById('ended-banner').hidden = false;
+})();
+</script>
 <script>// 메인 게시판 필터 (장소 / 태그) — 목록 내용은 HTML에 이미 들어 있어 검색엔진이 읽을 수 있고,
 // 여기서는 보이기/숨기기만 합니다.
 (function () {
