@@ -1,0 +1,100 @@
+<script>// 메인 게시판 필터 (장소 / 태그) — 목록 내용은 HTML에 이미 들어 있어 검색엔진이 읽을 수 있고,
+// 여기서는 보이기/숨기기만 합니다.
+(function () {
+  var board = document.getElementById('board');
+  if (!board) return;
+  var state = { place: 'all', tag: 'all' };
+  var cards = Array.prototype.slice.call(board.querySelectorAll('[data-place]'));
+  var empty = document.getElementById('empty');
+
+  function apply() {
+    var shown = 0;
+    cards.forEach(function (li) {
+      var okPlace = state.place === 'all' || li.dataset.place === state.place;
+      var okTag = state.tag === 'all' || li.dataset.tags.split(',').indexOf(state.tag) > -1;
+      li.hidden = !(okPlace && okTag);
+      if (!li.hidden) shown++;
+    });
+    if (empty) empty.hidden = shown > 0;
+  }
+
+  // 모바일 토글: 한 번에 하나의 패널만 열림
+  var toggles = Array.prototype.slice.call(document.querySelectorAll('.ftoggle'));
+  function closePanels() {
+    toggles.forEach(function (t) {
+      t.setAttribute('aria-expanded', 'false');
+      document.getElementById(t.dataset.panel).classList.remove('open');
+    });
+  }
+  toggles.forEach(function (t) {
+    t.addEventListener('click', function () {
+      var wasOpen = t.getAttribute('aria-expanded') === 'true';
+      closePanels();
+      if (!wasOpen) {
+        t.setAttribute('aria-expanded', 'true');
+        document.getElementById(t.dataset.panel).classList.add('open');
+      }
+    });
+  });
+
+  document.querySelectorAll('[data-filter]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var key = btn.dataset.filter;
+      state[key] = btn.dataset.value;
+      document.querySelectorAll('[data-filter="' + key + '"]').forEach(function (b) {
+        b.setAttribute('aria-pressed', b === btn ? 'true' : 'false');
+      });
+      apply();
+      var cur = document.querySelector('[data-current="' + key + '"]');
+      if (cur) cur.textContent = btn.textContent;
+      closePanels();
+      // GTM용: 필터 사용 기록
+      (window.dataLayer = window.dataLayer || []).push({ event: 'filter_click', filter_type: key, filter_value: btn.dataset.value });
+    });
+  });
+})();
+
+// 클릭 기록 (GTM에서 이 이벤트들로 트리거를 만들면 됩니다)
+document.addEventListener('click', function (e) {
+  var el = e.target.closest('[data-track]');
+  if (!el) return;
+  (window.dataLayer = window.dataLayer || []).push({
+    event: el.dataset.track,
+    popup_slug: el.dataset.popup || '',
+    popup_place: el.dataset.placeName || ''
+  });
+});
+
+// 상세 페이지 사진 크게 보기
+(function () {
+  var box = document.getElementById('lightbox');
+  if (!box) return;
+  var photos = Array.prototype.slice.call(document.querySelectorAll('.photo'));
+  var img = box.querySelector('.lb-img');
+  var empty = box.querySelector('.lb-empty');
+  var cap = box.querySelector('.lb-caption');
+  var cur = 0;
+  function show(i) {
+    cur = (i + photos.length) % photos.length;
+    var el = photos[cur];
+    var src = el.dataset.src;
+    img.hidden = !src; empty.hidden = !!src;
+    if (src) { img.src = src; img.alt = el.dataset.caption; } else { empty.textContent = el.dataset.caption + ' (사진 준비 중)'; }
+    cap.textContent = el.dataset.caption + ' · ' + (cur + 1) + ' / ' + photos.length;
+  }
+  function open(i) { show(i); box.hidden = false; document.body.style.overflow = 'hidden'; box.querySelector('.lb-close').focus(); }
+  function close() { box.hidden = true; document.body.style.overflow = ''; photos[cur].focus(); }
+  photos.forEach(function (el, i) { el.addEventListener('click', function () { open(i); }); });
+  box.addEventListener('click', function (e) {
+    var act = e.target.closest('[data-lb]');
+    if (act) { act.dataset.lb === 'close' ? close() : show(cur + (act.dataset.lb === 'next' ? 1 : -1)); return; }
+    if (e.target === box) close();
+  });
+  document.addEventListener('keydown', function (e) {
+    if (box.hidden) return;
+    if (e.key === 'Escape') close();
+    if (e.key === 'ArrowRight') show(cur + 1);
+    if (e.key === 'ArrowLeft') show(cur - 1);
+  });
+})();
+</script>

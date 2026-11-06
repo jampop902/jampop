@@ -1,0 +1,16 @@
+
+/* 11.6 실제 팝업용 추가 */
+.review-items { list-style: none; margin: 0 0 12px; padding: 0; display: grid; gap: 10px; }
+.review-items li { background: var(--soft); border-radius: 10px; padding: 12px 14px; }
+.ri-head { display: flex; justify-content: space-between; gap: 10px; align-items: baseline; margin-bottom: 4px; }
+.ri-head span { color: var(--muted); font-size: 13px; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.review-items p { margin: 0; }
+section.block p + p { margin-top: 10px; }
+.menu h3 { font-family: var(--font-title); font-size: 15px; font-weight: 700; color: var(--accent-deep); margin: 18px 0 2px; }
+.menu h3:first-of-type { margin-top: 4px; }
+.goods td:first-child { padding-right: 12px; }
+.goods s { color: var(--muted); font-size: 12px; margin-right: 4px; }
+.goods b { color: var(--pre); }
+.mini-badge { display: inline-block; font-size: 11px; font-weight: 700; color: var(--accent-deep); background: var(--free-bg); border-radius: 4px; padding: 0 5px; margin-left: 4px; vertical-align: 1px; white-space: nowrap; }
+.note { color: var(--muted); font-size: 13px; margin-top: 12px !important; }
+.fact small + small { margin-top: 2px; }
